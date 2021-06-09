@@ -9,4 +9,7 @@ import kodlama.io.northwind.entities.concretes.Product;
 public interface ProductService {
 	DataResult<List<Product>> getAll();
 	Result add(Product product);
+
+      
+      
 }
