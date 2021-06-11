@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import kodlama.io.northwind.business.abstracts.ProductService;
 import kodlama.io.northwind.core.utilities.result.DataResult;
 import kodlama.io.northwind.core.utilities.result.Result;
 import kodlama.io.northwind.entities.concretes.Product;
+
 
 @RestController
 @RequestMapping("/api/products")
@@ -38,6 +40,11 @@ public class ProductsController {
 	public Result add(@RequestBody Product product) {
 		
 		return this.productService.add(product);
+	}
+	
+	@GetMapping("/getByProductName")
+	public DataResult<Product> getByProductName(@RequestParam String productName){
+		return this.productService.getByProductName(productName);
 	}
 	
 }

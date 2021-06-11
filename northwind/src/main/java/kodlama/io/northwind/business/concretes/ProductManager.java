@@ -36,5 +36,9 @@ public class ProductManager implements ProductService{
 		this.productDao.save(product);
 		return new SuccessResult("Ürün eklendi");
 	}
-
+	@Override
+	public DataResult<Product> getByProductName(String productName) {
+		return new SuccessDataResult<Product>
+		(this.productDao.getByProductName(productName),"Data listelendi");	
+}
 }
