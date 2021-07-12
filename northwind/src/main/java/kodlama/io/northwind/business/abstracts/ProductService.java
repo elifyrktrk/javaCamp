@@ -9,8 +9,9 @@ import kodlama.io.northwind.entities.concretes.Product;
 
 public interface ProductService {
 	DataResult<List<Product>> getAll();
+	DataResult<List<Product>> getAll(int pageNo, int pageSize);
+	DataResult<List<Product>> getAllSorted();
 	Result add(Product product);
-
 
 	 DataResult<Product>  getByProductName(String productName);
 	 
